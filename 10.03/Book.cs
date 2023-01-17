@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -37,11 +37,11 @@ namespace _10._03
         }
 
 
-        private string GetCategory() { return category; }
-        public string SetCategory(string category)
+        public string Category
         {
-            this.category = category;
-            return category;
+            
+            set {this.category = value;}
+         
         }
 
 
@@ -59,6 +59,33 @@ namespace _10._03
             this.releaseDate = releaseDate;
             return releaseDate;
         }
+        
+        public Book()
+        {
+            category = "-1";
+            author = "-1";
+            title = "-1";
+            releaseDate = -1;
+            pages = -1;
+        }
+
+        public Book(string title, int pages)
+        {
+            this.title = title;
+            this.pages = pages;
+            author = "-1";
+            category = "-1";
+            releaseDate = -1;
+        }
+
+        public Book(string title, int pages, string author, string category, int releaseDate)
+        {
+            this.author = author;
+            this.category = category;
+            this.releaseDate = releaseDate;
+            this.pages = pages;
+            this.title = title;
+        }
 
         public void print()
         {
@@ -69,7 +96,9 @@ namespace _10._03
             Console.WriteLine(pages);
         }
 
+        ///
+
+        public static readonly List<String> categoryList = new List<String>() { "detské", "romantické", "náučné", "sci-fi", "dobrodružné"};
+
     }
 }
-
-
