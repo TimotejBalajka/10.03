@@ -12,22 +12,34 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        
+
         Console.WriteLine("Hello, World!");
-        Book LOTR = new Book();
-        LOTR.title = "Knižka pre (ne)poslušné deti";
-        LOTR.pages = 64;
-        LOTR.author = "Miro Jaroš";
-        LOTR.category = "Kids";
-        LOTR.releaseDate = 1;
+        Book LOTR = new Book("Kni�ka pre (ne)poslu�n� deti", 64, "Miro Jaro�", "Kids", 1);
         LOTR.print();
 
         Book LOTR1 = new Book();
-        Book LOTR2 = new Book("Grázlik Gabo", 96);
+        Book LOTR2 = new Book("Gr�zlik Gabo", 96);
         Book Hobit = new Book("Hobbit ", 232, "J.R.R Tolkien", "Sci-fi", 1937);
         LOTR1.print();
         LOTR2.print();
         Hobit.print();
+
+
+        Library schoolLibrary = new Library();
+        schoolLibrary.numberOfBooks = 4;
+        schoolLibrary.NumberofStudents = 2;
+
+        schoolLibrary.studentsList.Add("Poul");
+        schoolLibrary.studentsList.Add("John");
+
+        schoolLibrary.booksList.Add(LOTR);
+        schoolLibrary.booksList.Add(LOTR1);
+
+        schoolLibrary.booksList.Add(LOTR2);
+        schoolLibrary.booksList.Add(Hobit);
+
+        Console.WriteLine(schoolLibrary.ToString());
+
 
 
     }

@@ -6,11 +6,11 @@ namespace _10._03
 {
     internal class Book
     {
-        public string title;
-        public int pages;
-        public string author;
-        public string category;
-        public int releaseDate;
+        private string title;
+        private int pages;
+        private string author;
+        private string category;
+        private int releaseDate;
 
         private string GetTitle() { return title; }
         public string SetTitle(string title)
@@ -37,11 +37,11 @@ namespace _10._03
         }
 
 
-        private string GetCategory() { return category; }
-        public string SetCategory(string category)
+        public string Category
         {
-            this.category = category;
-            return category;
+
+            set { this.category = value; }
+
         }
 
 
@@ -59,7 +59,7 @@ namespace _10._03
             this.releaseDate = releaseDate;
             return releaseDate;
         }
-        
+
         public Book()
         {
             category = "-1";
@@ -96,7 +96,13 @@ namespace _10._03
             Console.WriteLine(pages);
         }
 
+        public override string ToString()
+        {
+            return String.Format($"{author}, {category}, {pages}, {releaseDate}; {title}");
+        }
+        ///
+
+        public static readonly List<String> categoryList = new List<String>() { "detské", "romantické", "náučné", "sci-fi", "dobrodružné" };
+
     }
 }
-
-
